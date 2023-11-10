@@ -1,0 +1,6 @@
+{
+    "python.defaultInterpreterPath": "python3",
+    "code-runner.executorMap": {
+        "python": "/usr/bin/python3"
+    }
+}
