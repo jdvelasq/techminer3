@@ -2,6 +2,12 @@ Techminer3
 ################################################################################
 
 
+.. toctree::
+    :caption: METRICS
+    :hidden:
+    :maxdepth: 2
+
+
 
 .. toctree::
     :caption: TOOLS
@@ -10,6 +16,7 @@ Techminer3
     
   
     tools/query
+    tools/summary_sheet
 
 
 **Author**:
