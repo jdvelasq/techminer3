@@ -8,6 +8,7 @@ Techminer3
     :maxdepth: 2
 
     metrics/general_metrics
+    metrics/trend_metrics
 
 
 .. toctree::

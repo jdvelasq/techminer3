@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="SummarySheet" href="summary_sheet.html" /><link rel="prev" title="Trend Metrics" href="../metrics/trend_metrics.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Trend Metrics" href="trend_metrics.html" /><link rel="prev" title="Techminer3" href="../index.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.09.10 -->
-        <title>Query - TechMiner3 Nov 10, 2023</title>
+        <title>General Metrics - TechMiner3 Nov 10, 2023</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=369552022d0b975c8e74270ce6eabe0fb7978f24" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -164,14 +164,14 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">METRICS</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../metrics/general_metrics.html">General Metrics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../metrics/trend_metrics.html">Trend Metrics</a></li>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">General Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trend_metrics.html">Trend Metrics</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">TOOLS</span></p>
-<ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Query</a></li>
-<li class="toctree-l1"><a class="reference internal" href="summary_sheet.html">SummarySheet</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools/query.html">Query</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/summary_sheet.html">SummarySheet</a></li>
 </ul>
 
 </div>
@@ -206,11 +206,10 @@
           </label>
         </div>
         <article role="main">
-          <span class="target" id="module-techminer3.tools.query"></span><section id="query">
-<h1>Query<a class="headerlink" href="#query" title="Permalink to this heading">#</a></h1>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">techminer3.tools</span> <span class="kn">import</span> <span class="n">Query</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Query</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="n">expr</span><span class="o">=</span><span class="s2">&quot;SELECT source_title FROM database LIMIT 5;&quot;</span><span class="p">,</span>
+          <span class="target" id="module-techminer3.metrics.general_metrics"></span><section id="general-metrics">
+<h1>General Metrics<a class="headerlink" href="#general-metrics" title="Permalink to this heading">#</a></h1>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">techminer3.metrics</span> <span class="kn">import</span> <span class="n">GeneralMetrics</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">GeneralMetrics</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="c1">#</span>
 <span class="gp">... </span>    <span class="c1"># DATABASE PARAMS:</span>
 <span class="gp">... </span>    <span class="n">root_dir</span><span class="o">=</span><span class="s2">&quot;example/&quot;</span><span class="p">,</span>
@@ -218,12 +217,63 @@
 <span class="gp">... </span>    <span class="n">year_filter</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
 <span class="gp">... </span>    <span class="n">cited_by_filter</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
 <span class="gp">... </span><span class="p">)</span><span class="o">.</span><span class="n">df_</span>
-<span class="go">                                      source_title</span>
-<span class="go">0                      Review of Financial Studies</span>
-<span class="go">1  International Journal of Information Management</span>
-<span class="go">2                             Financial Innovation</span>
-<span class="go">3                           China Economic Journal</span>
-<span class="go">4                Journal of Economics and Business</span>
+<span class="go">                                                            value</span>
+<span class="go">category       item</span>
+<span class="go">GENERAL        Timespan                                 2015:2019</span>
+<span class="go">               Documents                                       50</span>
+<span class="go">               Annual growth rate %                        118.67</span>
+<span class="go">               Document average age                          5.24</span>
+<span class="go">               Num References                                1275</span>
+<span class="go">               Average references per document              26.02</span>
+<span class="go">               Average citations per document               162.7</span>
+<span class="go">               Average citations per document per year      32.54</span>
+<span class="go">               Sources                                         41</span>
+<span class="go">               Average documents per source                  1.22</span>
+<span class="go">DOCUMENT TYPES Article                                         37</span>
+<span class="go">               Book                                             1</span>
+<span class="go">               Conference paper                                 4</span>
+<span class="go">               Editorial                                        2</span>
+<span class="go">               Review                                           6</span>
+<span class="go">AUTHORS        Authors                                        115</span>
+<span class="go">               Authors of single-authored documents            12</span>
+<span class="go">               Single-authored documents                       12</span>
+<span class="go">               Multi-authored documents                        38</span>
+<span class="go">               Authors per document                          2.52</span>
+<span class="go">               Co-authors per document                        3.0</span>
+<span class="go">               International co-authorship %                30.61</span>
+<span class="go">               Author appearances                             126</span>
+<span class="go">               Documents per author                           0.4</span>
+<span class="go">               Collaboration index                            1.0</span>
+<span class="go">               Organizations                                   91</span>
+<span class="go">               Organizations (1st author)                      43</span>
+<span class="go">               Countries                                       24</span>
+<span class="go">               Countries (1st author)                          18</span>
+<span class="go">KEYWORDS       Raw author keywords                            148</span>
+<span class="go">               Cleaned author keywords                        148</span>
+<span class="go">               Raw index keywords                             179</span>
+<span class="go">               Cleaned index keywords                         179</span>
+<span class="go">               Raw keywords                                   279</span>
+<span class="go">               Cleaned keywords                               279</span>
+<span class="go">NLP PHRASES    Raw title NLP phrases                          124</span>
+<span class="go">               Cleaned title NLP phrases                      124</span>
+<span class="go">               Raw abstract NLP phrases                      1461</span>
+<span class="go">               Cleaned abstract NLP phrases                  1461</span>
+<span class="go">               Raw NLP phrases                               1501</span>
+<span class="go">               Cleaned NLP phrases                           1501</span>
+<span class="go">DESCRIPTORS    Raw descriptors                               1668</span>
+<span class="go">               Cleaned descriptors                           1668</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">techminer3.metrics</span> <span class="kn">import</span> <span class="n">GeneralMetrics</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">GeneralMetrics</span><span class="p">(</span> 
+<span class="gp">... </span>    <span class="c1">#</span>
+<span class="gp">... </span>    <span class="c1"># DATABASE PARAMS:</span>
+<span class="gp">... </span>    <span class="n">root_dir</span><span class="o">=</span><span class="s2">&quot;example/&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">database</span><span class="o">=</span><span class="s2">&quot;main&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">year_filter</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">cited_by_filter</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">)</span><span class="o">.</span><span class="n">prompt</span><span class="p">()</span>
+<span class="go">Your task is ...</span>
 </pre></div>
 </div>
 </section>
@@ -233,23 +283,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="summary_sheet.html">
+          <a class="next-page" href="trend_metrics.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">SummarySheet</div>
+                <div class="title">Trend Metrics</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../metrics/trend_metrics.html">
+          <a class="prev-page" href="../index.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Trend Metrics</div>
+                <div class="title">Home</div>
                 
               </div>
             </a>

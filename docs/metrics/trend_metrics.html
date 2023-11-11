@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="SummarySheet" href="summary_sheet.html" /><link rel="prev" title="Trend Metrics" href="../metrics/trend_metrics.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Query" href="../tools/query.html" /><link rel="prev" title="General Metrics" href="general_metrics.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.09.10 -->
-        <title>Query - TechMiner3 Nov 10, 2023</title>
+        <title>Trend Metrics - TechMiner3 Nov 10, 2023</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=369552022d0b975c8e74270ce6eabe0fb7978f24" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -164,14 +164,14 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">METRICS</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../metrics/general_metrics.html">General Metrics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../metrics/trend_metrics.html">Trend Metrics</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general_metrics.html">General Metrics</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Trend Metrics</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">TOOLS</span></p>
-<ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Query</a></li>
-<li class="toctree-l1"><a class="reference internal" href="summary_sheet.html">SummarySheet</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools/query.html">Query</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/summary_sheet.html">SummarySheet</a></li>
 </ul>
 
 </div>
@@ -206,11 +206,10 @@
           </label>
         </div>
         <article role="main">
-          <span class="target" id="module-techminer3.tools.query"></span><section id="query">
-<h1>Query<a class="headerlink" href="#query" title="Permalink to this heading">#</a></h1>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">techminer3.tools</span> <span class="kn">import</span> <span class="n">Query</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Query</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="n">expr</span><span class="o">=</span><span class="s2">&quot;SELECT source_title FROM database LIMIT 5;&quot;</span><span class="p">,</span>
+          <span class="target" id="module-techminer3.metrics.trend_metrics"></span><section id="trend-metrics">
+<h1>Trend Metrics<a class="headerlink" href="#trend-metrics" title="Permalink to this heading">#</a></h1>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">techminer3.metrics</span> <span class="kn">import</span> <span class="n">TrendMetrics</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">TrendMetrics</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="c1">#</span>
 <span class="gp">... </span>    <span class="c1"># DATABASE PARAMS:</span>
 <span class="gp">... </span>    <span class="n">root_dir</span><span class="o">=</span><span class="s2">&quot;example/&quot;</span><span class="p">,</span>
@@ -218,12 +217,51 @@
 <span class="gp">... </span>    <span class="n">year_filter</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
 <span class="gp">... </span>    <span class="n">cited_by_filter</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
 <span class="gp">... </span><span class="p">)</span><span class="o">.</span><span class="n">df_</span>
-<span class="go">                                      source_title</span>
-<span class="go">0                      Review of Financial Studies</span>
-<span class="go">1  International Journal of Information Management</span>
-<span class="go">2                             Financial Innovation</span>
-<span class="go">3                           China Economic Journal</span>
-<span class="go">4                Journal of Economics and Business</span>
+<span class="go">      OCC  cum_OCC  ...  cum_local_citations  mean_local_citations_per_year</span>
+<span class="go">year                ...</span>
+<span class="go">2015    1        1  ...                  4.0                           0.80</span>
+<span class="go">2016    7        8  ...                 12.0                           0.29</span>
+<span class="go">2017   10       18  ...                 23.0                           0.37</span>
+<span class="go">2018   17       35  ...                 37.0                           0.41</span>
+<span class="go">2019   15       50  ...                 38.0                           0.07</span>
+
+<span class="go">[5 rows x 11 columns]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">techminer3.metrics</span> <span class="kn">import</span> <span class="n">TrendMetrics</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">TrendMetrics</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="c1">#</span>
+<span class="gp">... </span>    <span class="c1"># DATABASE PARAMS:</span>
+<span class="gp">... </span>    <span class="n">root_dir</span><span class="o">=</span><span class="s2">&quot;example/&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">database</span><span class="o">=</span><span class="s2">&quot;main&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">year_filter</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">cited_by_filter</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="c1">#</span>
+<span class="gp">... </span>    <span class="c1"># CHART PARAMS:</span>
+<span class="gp">... </span>    <span class="n">metric_to_plot</span><span class="o">=</span><span class="s2">&quot;OCC&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">auxiliary_metric_to_plot</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Annual Scientific Production&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">year_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">metric_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">textfont_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">marker_size</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">line_width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">yshift</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&quot;sphinx/_static/metrics/trend_metrics.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<iframe src="../../../_static/metrics/trend_metrics.html"
+height="600px" width="100%" frameBorder="0"></iframe><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">techminer3.metrics</span> <span class="kn">import</span> <span class="n">TrendMetrics</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">TrendMetrics</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="c1">#</span>
+<span class="gp">... </span>    <span class="c1"># DATABASE PARAMS:</span>
+<span class="gp">... </span>    <span class="n">root_dir</span><span class="o">=</span><span class="s2">&quot;example/&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">database</span><span class="o">=</span><span class="s2">&quot;main&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">year_filter</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">cited_by_filter</span><span class="o">=</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">)</span><span class="o">.</span><span class="n">prompt</span><span class="p">()</span> 
+<span class="go">Your task is ...</span>
 </pre></div>
 </div>
 </section>
@@ -233,23 +271,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="summary_sheet.html">
+          <a class="next-page" href="../tools/query.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">SummarySheet</div>
+                <div class="title">Query</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../metrics/trend_metrics.html">
+          <a class="prev-page" href="general_metrics.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Trend Metrics</div>
+                <div class="title">General Metrics</div>
                 
               </div>
             </a>

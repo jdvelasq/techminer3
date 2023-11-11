@@ -2,6 +2,14 @@ Techminer3
 ################################################################################
 
 
+.. toctree::
+    :caption: METRICS
+    :hidden:
+    :maxdepth: 2
+
+    metrics/general_metrics
+    metrics/trend_metrics
+
 
 .. toctree::
     :caption: TOOLS
