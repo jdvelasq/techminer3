@@ -7,6 +7,7 @@ Techminer3
     :hidden:
     :maxdepth: 2
 
+    metrics/general_metrics
 
 
 .. toctree::
