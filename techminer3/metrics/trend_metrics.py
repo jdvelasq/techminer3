@@ -52,7 +52,7 @@ year                ...
 
 .. raw:: html
 
-    <iframe src="../../../_static/metrics/trend_metrics.html"  
+    <iframe src="../_static/metrics/trend_metrics.html"  
     height="600px" width="100%" frameBorder="0"></iframe>
 
 
