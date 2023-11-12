@@ -71,8 +71,6 @@ Your task is ...
 
 
 """
-
-
 import pandas as pd
 import plotly.express as px
 

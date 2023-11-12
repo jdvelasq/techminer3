@@ -17,7 +17,7 @@ class PromptMixin:
         """:meta private:"""
 
         prompt = textwrap.fill(main_text, width=TEXTWRAP_WIDTH)
-        prompt = prompt.replace("\n", " \\\n")
+        prompt = prompt.replace("\n", " \n")
         prompt = prompt + f"\n\nTable:\n```\n{df_text}\n```\n"
 
         return prompt

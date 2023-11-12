@@ -9,6 +9,7 @@ Techminer3
 
     metrics/general_metrics
     metrics/trend_metrics
+    metrics/performance_metrics
 
 
 .. toctree::
