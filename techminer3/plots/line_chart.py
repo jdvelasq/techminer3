@@ -1,0 +1,2 @@
+class LineChart:
+    pass
